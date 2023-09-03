@@ -1,0 +1,32 @@
+.header {
+    background: #2d2e2e;
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    border-bottom: 1px solid #716969;
+}
+
+.logo {
+    width: 50px;
+    margin: 5px 0 0 10px;
+}
+
+.list {
+    margin-left: 10px;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list_element {
+    color: #fbfbfb;
+    margin-left: 10px;
+    padding-right: 10px;
+    border-right: 2px solid #716969;
+}
+
+.list_element:hover {
+    color: #bcabae;
+    /*border-right: 3px solid #b9b6b6;*/
+}
