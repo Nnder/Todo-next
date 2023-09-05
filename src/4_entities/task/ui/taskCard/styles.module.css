@@ -1,0 +1,11 @@
+.completed {
+    color: #0b830b;
+}
+
+.incomplete {
+    color: #c2bbbb;
+}
+
+.late {
+    color: #8f0a0a;
+}
