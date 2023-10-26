@@ -28,7 +28,7 @@ const Footer = () => {
                 <ul className={styles.social_list}>
                     <li className={styles.social}>VK</li>
                     <li className={styles.social}>Tg</li>
-                    <li className={styles.social}>Ins</li>
+                    <li className={styles.social}>In</li>
                 </ul>
             </div>
 

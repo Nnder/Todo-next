@@ -9,3 +9,37 @@
 .late {
     color: #8f0a0a;
 }
+
+.task {
+    font-size: 20px;
+    display: flex;
+    background: #2d2e2e;
+    border-radius: 5px;
+    width: 95%;
+    margin: 10px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+}
+
+.task:hover {
+
+}
+
+.number {
+
+}
+
+.title {
+
+}
+
+.checkbox_wrapper {
+
+}
+
+.checkbox {
+    width: 25px;
+    height: 25px;
+}

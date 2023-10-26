@@ -1,16 +1,18 @@
 import React from 'react';
-import {getTasks} from "@/src/4_entities/task/model";
 import Card from "@/src/4_entities/task/ui/taskCard/Card";
+import Toggle from "@/src/4_entities/task/ui/taskCard/Toggle";
+import styles from "./styles.module.css";
+import {getTasks} from "@/src/4_entities/task/model";
 
-
-const TaskList = async () => {
-    const tasks = await getTasks();
+const TaskList = async (where: any = {}) => {
+    const tasks = await getTasks(where);
 
     return (
-        <div>
-            <div>Tasks list</div>
-            {tasks.map((el)=>(
-                <Card key={el.id} task={el}/>
+        <div className={styles.list}>
+            {tasks.map((el,index)=>(
+                <Card key={el.id} id={index+1} task={el}>
+                    <Toggle task={el} status={el.complete}/>
+                </Card>
             ))}
         </div>
     );

@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from "./styles.module.css";
+import classNames from "classnames";
 
-type Task = {
+import {status, trim} from './model/model';
+import Toggle from "@/src/4_entities/task/ui/taskCard/Toggle";
+
+
+type task = {
     id: number
     title: string
     body: string
@@ -12,29 +17,24 @@ type Task = {
 }
 
 interface CardProps {
-    task : Task
+    task : task
+    id: number
+    children: React.ReactNode
 }
 
-enum Status {
-    completed,
-    incomplete,
-    late,
-}
 
-const status = (task: Task) =>{
-    if(task.complete)
-        return Status.completed;
-    else if(!task.complete && task.endDate < Date.now())
-        return Status.late;
-    return Status.incomplete;
-}
+const Card = async ({task, id, children} : CardProps) => {
 
-const Card = ({task} : CardProps) => {
+    const cardStatus= await status(task);
 
     return (
-        <div>
-            <div>{task.title}</div>
-            <div>{status(task)}</div>
+        <div className={classNames(styles.task, styles[cardStatus])}>
+            <div className={styles.number}>{id}</div>
+            <div className={styles.title}>{ await trim(task.title, 60)}</div>
+            <div className={styles.checkbox_wrapper}>
+                {/*<Toggle task={task} status={cardStatus}/>*/}
+                {children}
+            </div>
         </div>
     );
 };
